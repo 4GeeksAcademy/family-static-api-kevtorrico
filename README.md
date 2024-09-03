@@ -48,7 +48,7 @@ Every **member** of the Jackson family must be a dictionary - the equivalent of 
 ```python
 + id: Int
 + first_name: String
-+ last_name: String (Always Jackson)
++ `last_name`: String (Always Jackson)
 + age: Int > 0
 + lucky_numbers: List of integers
 ```
