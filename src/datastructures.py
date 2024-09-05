@@ -49,11 +49,10 @@ class FamilyStructure:
             }
         self._members.append(new_person)
         return new_person
-
-    def delete_member(self, id):
-        # fill this method and update the return
-        for member_index in range (len(self._members)):
+    def delete_member (self, id):
+        for member_index in range(len(self._members)):
             if self._members[member_index]["id"] == id:
+                return self._members.pop(member_index)
 
     def get_member(self, id):
         # fill this method and update the return

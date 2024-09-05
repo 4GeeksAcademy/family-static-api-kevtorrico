@@ -34,13 +34,11 @@ def handle_hello():
         "hello": "world",
         "family": members
     }
-
-
     return jsonify(response_body), 200
 
 @app.route('/members', methods = ['POST'])
 def new_member():
-    body = request.json
+    body = request.json  
     new_person = jackson_family.add_member(body)
     return jsonify(new_person), 200
 
@@ -52,7 +50,13 @@ def get_one_member(member_id):
     else:
         return search_member, 200
 
-
+@app.route('/member/<int:member_id>', methods = ['DELETE'])
+def delete_member(member_id):
+    delete = jackson_family.delete_member(member_id)
+    if delete == None:
+        return "No se ha encontrado ninguna persona con ese ID", 404
+    else:
+        return delete, 200
 
 
 
